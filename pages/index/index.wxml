@@ -1,0 +1,54 @@
+<!--index.wxml-->
+<view class="container">
+  <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
+  <div class="loading" wx:if="{{loading}}">
+    <div class="loading-list">
+      <span class="point"></span>
+      <span class="point"></span>
+      <span class="point"></span>
+      <span class="point"></span>
+      <span class="point"></span>
+      <span class="point"></span>
+      <span class="point"></span>
+      <span class="point"></span>
+    </div>
+    <div class="loading-text">玩命加载中...</div>
+  </div>
+  <section wx:if="{firstPage}}" class="first-page {{fadeout?'fadeout':''}}">
+    <p class="first-page-text">你的女朋友来消息了，一定要想清楚再回答哦</p>
+    <button class="first-page-continue" bindtap="firstPageContinue">点击继续</button>
+  </section>
+  <section class="chat-page {{selected?'selected':''}}">
+    <header>
+      <div class="nav-left" bindtap="angry">
+        <i class="icon icon-nav-left"></i>
+        <span>超级无敌小仙女</span>
+      </div>
+      <div class="nav-right">
+        <i class="icon icon-nav-right"></i>
+      </div>
+    </header>
+    <main>
+      <div class="message-list"></div>
+    </main>
+    <footer bindtap="noGiveUp">
+      <i class="icon icon-voice"></i>
+      <div class="text-input"></div>
+      <i class="icon icon-face"></i>
+      <i class="icon icon-plus"></i>
+    </footer>
+    <div class="message-select" bindtap="choose">{{messageSelect}}</div>
+  </section>
+  <div class="tips {{tips?'hide':''}}">
+    <div class="cover"></div>
+    <div class="tips-container">
+      <p class="tips-text">分数：{{score}}</p>
+      <div class="tips-icon">
+        <i class="icon icon-replay"></i>
+      </div>
+    </div>
+  </div>
+</view>
+<!--
+<image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
+-->

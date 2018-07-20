@@ -1,0 +1,12 @@
+{
+  "pages":[
+    "pages/index/index",
+    "pages/logs/logs"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#353535",
+    "navigationBarTitleText": "四斋蒸鹅心",
+    "navigationBarTextStyle":"white"
+  }
+}
